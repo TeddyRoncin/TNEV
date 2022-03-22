@@ -1,7 +1,13 @@
-//#include "constants.cpp"
+#include <Arduino.h>
+#include "constants.cpp"
 
 #include "Movement.hpp"
 #include "LightResistance.hpp"
+
+/*
+ * This is the main file of the sketch.
+ * "void setup()" function is called once when the sketch is started, and "void loop()" is then called indefinitely
+*/
 
 Movement mvmt = Movement();
 LightResistance lr = LightResistance(mvmt);

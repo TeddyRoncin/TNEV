@@ -30,8 +30,33 @@ void Backward(void){
   digitalWrite(L1, LOW);
   digitalWrite(L2, HIGH);
 }
- 
 
+/*
+ * This class controls the movement of the robot
+ * At each tick, we register turns and if we move or not. Then, the method void Update() should be called.
+*/
+class Movement
+{
+public:
+  /*
+   * This simply constructs the object
+  */
+  Movement();
+  /*
+   * Move forward and turn the amount needed. m_AmountToTurn is then reset to 0
+  */
+  void Update();
+  /*
+   * Register a turn for the robot.
+   * If degree > 0, we turn to the left (trigonometric direction)
+   * If degree < 0, we turn to the right (anti-trigonometric direction)
+  */
+  void Turn(int degree);
+  void StartMoving();
+  void StopMoving();
+private:
+  int m_AmountToTurn;
+};
 
 void Turnright(void){
   analogWrite(R_EN, Speed);

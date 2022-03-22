@@ -17,6 +17,10 @@
 class LightResistance
 {
 public:
+  /*
+   * This is the constructor.
+   * It takes a Movement in parameter. It is used to calibrate the resistance and to update the direction of the resistance
+  */
   LightResistance(Movement& movement);
   void Calibrate();
   int Update();
